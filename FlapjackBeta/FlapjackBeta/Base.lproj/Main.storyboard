@@ -132,7 +132,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0I-8w-ul8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="372" y="461"/>
+            <point key="canvasLocation" x="470" y="461"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2LC-IR-Jk3">
@@ -146,21 +146,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="584" height="54"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u3o-2Z-Fft">
-                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="53.5"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Project name and version (ex: sky blue 1.2)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uHd-Uj-kMX">
-                                <rect key="frame" x="61" y="12" width="503" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJg-xB-ZfI">
+                                <rect key="frame" x="0.0" y="0.0" width="55" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="uMO-LH-ibs"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="flapjack"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XD-rO-EMM">
+                                <rect key="frame" x="63" y="6" width="501" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nJg-xB-ZfI" firstAttribute="leading" secondItem="TD2-ne-MPZ" secondAttribute="leading" id="E8A-S8-BId"/>
+                            <constraint firstItem="nJg-xB-ZfI" firstAttribute="top" secondItem="Dei-Cr-uqy" secondAttribute="bottom" id="dl9-fm-rhp"/>
+                            <constraint firstItem="nJg-xB-ZfI" firstAttribute="bottom" secondItem="I11-gA-eIO" secondAttribute="top" id="oO6-mD-9KN"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSx-gE-gF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1909" y="895.75"/>
+            <point key="canvasLocation" x="1909" y="895"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="flapjack" width="100" height="100"/>
+    </resources>
 </document>
