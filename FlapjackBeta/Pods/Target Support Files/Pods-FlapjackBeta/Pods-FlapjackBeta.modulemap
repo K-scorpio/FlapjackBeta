@@ -1,0 +1,6 @@
+framework module Pods_FlapjackBeta {
+  umbrella header "Pods-FlapjackBeta-umbrella.h"
+
+  export *
+  module * { export * }
+}

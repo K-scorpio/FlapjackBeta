@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4E506D9DE61C5B742ED8645 /* Pods_FlapjackBeta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBA6C64C713028727CB66A6 /* Pods_FlapjackBeta.framework */; };
 		E2086CA81D12F9DF00434BF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2086CA71D12F9DF00434BF2 /* AppDelegate.swift */; };
 		E2086CAD1D12F9DF00434BF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2086CAB1D12F9DF00434BF2 /* Main.storyboard */; };
 		E2086CAF1D12F9DF00434BF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2086CAE1D12F9DF00434BF2 /* Assets.xcassets */; };
@@ -15,9 +16,16 @@
 		E2086D091D148D4900434BF2 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2086D081D148D4900434BF2 /* CommentTableViewCell.swift */; };
 		E2086D0C1D148DA500434BF2 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2086D0B1D148DA500434BF2 /* ProjectTableViewCell.swift */; };
 		E2086D0E1D1490D000434BF2 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2086D0D1D1490D000434BF2 /* Project.swift */; };
+		E2086D111D14941800434BF2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2086D101D14941800434BF2 /* User.swift */; };
+		E2086D131D1496B600434BF2 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2086D121D1496B600434BF2 /* Comment.swift */; };
+		E25CE6B11D14B4B300B82774 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E25CE6B01D14B4B300B82774 /* GoogleService-Info.plist */; };
+		E25CE6B31D14B64700B82774 /* ProjectDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25CE6B21D14B64700B82774 /* ProjectDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CEB48C76170CAF82A759AED /* Pods-FlapjackBeta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlapjackBeta.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlapjackBeta/Pods-FlapjackBeta.release.xcconfig"; sourceTree = "<group>"; };
+		4BBA6C64C713028727CB66A6 /* Pods_FlapjackBeta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlapjackBeta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9814CB23FA1AB7D9848D6302 /* Pods-FlapjackBeta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlapjackBeta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlapjackBeta/Pods-FlapjackBeta.debug.xcconfig"; sourceTree = "<group>"; };
 		E2086CA41D12F9DF00434BF2 /* FlapjackBeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlapjackBeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2086CA71D12F9DF00434BF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2086CAC1D12F9DF00434BF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,6 +36,10 @@
 		E2086D081D148D4900434BF2 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		E2086D0B1D148DA500434BF2 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		E2086D0D1D1490D000434BF2 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		E2086D101D14941800434BF2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E2086D121D1496B600434BF2 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		E25CE6B01D14B4B300B82774 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E25CE6B21D14B64700B82774 /* ProjectDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E506D9DE61C5B742ED8645 /* Pods_FlapjackBeta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5189835636E22D5D85A261D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BBA6C64C713028727CB66A6 /* Pods_FlapjackBeta.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B6658923D2E425C9ACC5AA8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9814CB23FA1AB7D9848D6302 /* Pods-FlapjackBeta.debug.xcconfig */,
+				0CEB48C76170CAF82A759AED /* Pods-FlapjackBeta.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E2086C9B1D12F9DF00434BF2 = {
 			isa = PBXGroup;
 			children = (
 				E2086CA61D12F9DF00434BF2 /* FlapjackBeta */,
 				E2086CA51D12F9DF00434BF2 /* Products */,
+				7B6658923D2E425C9ACC5AA8 /* Pods */,
+				5189835636E22D5D85A261D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +98,7 @@
 				E2086D0F1D14929100434BF2 /* Model */,
 				E2086D0A1D148D5300434BF2 /* View Controllers */,
 				E2086CB31D12F9DF00434BF2 /* Info.plist */,
+				E25CE6B01D14B4B300B82774 /* GoogleService-Info.plist */,
 			);
 			path = FlapjackBeta;
 			sourceTree = "<group>";
@@ -74,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				E2086D061D14730100434BF2 /* ProjectViewController.swift */,
+				E25CE6B21D14B64700B82774 /* ProjectDetailTableViewController.swift */,
 				E2086D0B1D148DA500434BF2 /* ProjectTableViewCell.swift */,
 				E2086D081D148D4900434BF2 /* CommentTableViewCell.swift */,
 				E2086D041D146D8900434BF2 /* CustomHeaderCell.swift */,
@@ -85,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				E2086D0D1D1490D000434BF2 /* Project.swift */,
+				E2086D101D14941800434BF2 /* User.swift */,
+				E2086D121D1496B600434BF2 /* Comment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -96,9 +132,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2086CB61D12F9DF00434BF2 /* Build configuration list for PBXNativeTarget "FlapjackBeta" */;
 			buildPhases = (
+				F22315D9F76B0A4DF8E2A241 /* [CP] Check Pods Manifest.lock */,
 				E2086CA01D12F9DF00434BF2 /* Sources */,
 				E2086CA11D12F9DF00434BF2 /* Frameworks */,
 				E2086CA21D12F9DF00434BF2 /* Resources */,
+				5CD9F0F937A2FCB90B442B8F /* [CP] Embed Pods Frameworks */,
+				BC46AC993AEA3F753C0EC560 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,10 +188,59 @@
 			files = (
 				E2086CAF1D12F9DF00434BF2 /* Assets.xcassets in Resources */,
 				E2086CAD1D12F9DF00434BF2 /* Main.storyboard in Resources */,
+				E25CE6B11D14B4B300B82774 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5CD9F0F937A2FCB90B442B8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlapjackBeta/Pods-FlapjackBeta-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC46AC993AEA3F753C0EC560 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlapjackBeta/Pods-FlapjackBeta-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F22315D9F76B0A4DF8E2A241 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E2086CA01D12F9DF00434BF2 /* Sources */ = {
@@ -162,9 +250,12 @@
 				E2086D0C1D148DA500434BF2 /* ProjectTableViewCell.swift in Sources */,
 				E2086D071D14730100434BF2 /* ProjectViewController.swift in Sources */,
 				E2086CA81D12F9DF00434BF2 /* AppDelegate.swift in Sources */,
+				E2086D131D1496B600434BF2 /* Comment.swift in Sources */,
+				E25CE6B31D14B64700B82774 /* ProjectDetailTableViewController.swift in Sources */,
 				E2086D051D146D8900434BF2 /* CustomHeaderCell.swift in Sources */,
 				E2086D091D148D4900434BF2 /* CommentTableViewCell.swift in Sources */,
 				E2086D0E1D1490D000434BF2 /* Project.swift in Sources */,
+				E2086D111D14941800434BF2 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +360,7 @@
 		};
 		E2086CB71D12F9DF00434BF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9814CB23FA1AB7D9848D6302 /* Pods-FlapjackBeta.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -282,6 +374,7 @@
 		};
 		E2086CB81D12F9DF00434BF2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CEB48C76170CAF82A759AED /* Pods-FlapjackBeta.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
