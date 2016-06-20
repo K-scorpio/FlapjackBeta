@@ -6,16 +6,38 @@
 //  Copyright © 2016 Hartley Development. All rights reserved.
 //
 
+
+
+
+// I NEED TO CONFORM TO THE CELLFORROWATINDEXPATH && NUMBEROFROWSINSECTION
+
+
+
+
 import UIKit
 import SafariServices
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ProjectViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let project = Project(name: "Some project", creator: "Kevin", urlString: "", urlName: "")
         
+        if let currentUser = UserController.currentUser {
+            
+        } else {
+            performSegueWithIdentifier("toLoginView", sender: self)
+        }
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //        let cell =
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
     
     override func didReceiveMemoryWarning() {
@@ -23,20 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let  headerCell = tableView.dequeueReusableCellWithIdentifier("headerCell") as! CustomHeaderCell
-        headerCell.backgroundColor = UIColor.grayColor()
-        
-        switch (section) {
-        case 0:
-            headerCell.fileName.text = "Project Name";
-        default:
-            headerCell.fileName.text = "";
-        }
-        
-        return headerCell
-        
-    }
+  
     
     
     /*
