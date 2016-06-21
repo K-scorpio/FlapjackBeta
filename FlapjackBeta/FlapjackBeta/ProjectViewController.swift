@@ -16,28 +16,35 @@
 
 import UIKit
 import SafariServices
+import Firebase
 
 class ProjectViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let project = Project(name: "Some project", creator: "Kevin", urlString: "", urlName: "")
-        
-        if let currentUser = UserController.currentUser {
-            
+        if UserController.currentUser != nil {
+            return
         } else {
             performSegueWithIdentifier("toLoginView", sender: self)
         }
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        myTableView.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //        let cell =
-        return 0
+        return ProjectController.sharedInstance.projects.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         return UITableViewCell()
+        let cell = 
     }
     
     override func didReceiveMemoryWarning() {

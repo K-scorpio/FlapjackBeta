@@ -24,6 +24,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBOutlet weak var pickImageButton: UIButton!
     
+    @IBOutlet weak var forgotButton: UIButton!
     
     enum Account {
         case existing
@@ -32,6 +33,8 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     var account = Account.existing
     
+    @IBAction func forgotPasswordButtonTapped(sender: AnyObject) {
+    }
     
     @IBAction func pickImageButtonTapped(sender: AnyObject) {
         let myImagePicker = UIImagePickerController()
@@ -96,13 +99,16 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             createNewAccount.setTitle("Have existing account?", forState: .Normal)
             loginButton.setTitle("Create Account", forState: .Normal)
             pickImageButton.hidden = false
+            forgotButton.hidden = true
         } else {
             account = .existing
             userDisplayName.hidden = true
             myImageView.hidden = true
+            myImageView.image = UIImage(named: "profile")
             createNewAccount.setTitle("Create New Account", forState: .Normal)
             loginButton.setTitle("Login", forState: .Normal)
             pickImageButton.hidden = true
+            forgotButton.hidden = false
             
         }
     }
