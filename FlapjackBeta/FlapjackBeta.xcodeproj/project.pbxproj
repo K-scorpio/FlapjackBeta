@@ -18,6 +18,7 @@
 		E2086D111D14941800434BF2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2086D101D14941800434BF2 /* User.swift */; };
 		E2086D131D1496B600434BF2 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2086D121D1496B600434BF2 /* Comment.swift */; };
 		E23ADEE71D19B08100240D79 /* NewProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23ADEE61D19B08100240D79 /* NewProjectViewController.swift */; };
+		E23ADF071D1B267600240D79 /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23ADF061D1B267600240D79 /* CommentController.swift */; };
 		E25CE6B31D14B64700B82774 /* ProjectDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25CE6B21D14B64700B82774 /* ProjectDetailTableViewController.swift */; };
 		E26802081D184E81009D1166 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26802071D184E81009D1166 /* FirebaseController.swift */; };
 		E268020B1D185369009D1166 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E268020A1D185369009D1166 /* GoogleService-Info.plist */; };
@@ -44,6 +45,7 @@
 		E2086D101D14941800434BF2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E2086D121D1496B600434BF2 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		E23ADEE61D19B08100240D79 /* NewProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController.swift; sourceTree = "<group>"; };
+		E23ADF061D1B267600240D79 /* CommentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
 		E25CE6B21D14B64700B82774 /* ProjectDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetailTableViewController.swift; sourceTree = "<group>"; };
 		E26802071D184E81009D1166 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		E268020A1D185369009D1166 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				E268020C1D1853DF009D1166 /* UserController.swift */,
 				E26802151D189D33009D1166 /* ProjectController.swift */,
+				E23ADF061D1B267600240D79 /* CommentController.swift */,
 				E26802071D184E81009D1166 /* FirebaseController.swift */,
 				E26802111D185F0F009D1166 /* ImageManager.swift */,
 			);
@@ -283,6 +286,7 @@
 				E2086D131D1496B600434BF2 /* Comment.swift in Sources */,
 				E25CE6B31D14B64700B82774 /* ProjectDetailTableViewController.swift in Sources */,
 				E2086D051D146D8900434BF2 /* CustomHeaderCell.swift in Sources */,
+				E23ADF071D1B267600240D79 /* CommentController.swift in Sources */,
 				E2086D091D148D4900434BF2 /* CommentTableViewCell.swift in Sources */,
 				E26802161D189D33009D1166 /* ProjectController.swift in Sources */,
 				E2086D0E1D1490D000434BF2 /* Project.swift in Sources */,

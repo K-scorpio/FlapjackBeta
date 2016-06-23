@@ -71,7 +71,6 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
     @IBAction func loginButtonTapped(sender: AnyObject) {
         accountCheck()
     }

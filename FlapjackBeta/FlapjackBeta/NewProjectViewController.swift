@@ -32,7 +32,6 @@ class NewProjectViewController: UIViewController {
     }
     
     func newProject() {
-        let project = Project(name: projectNameTextField.text ?? "", creator: UserController.currentUser?.displayName ?? "", urlString: projectUrlTextField.text ?? "", urlName: urlNameTextField.text ?? "")
-        ProjectController.sharedInstance.addProject(project.name, creator: project.creator, urlString: project.urlString, urlName: project.urlName)
+        ProjectController.addProject(projectNameTextField.text ?? "", creator: UserController.currentUser?.displayName ?? "", urlString: projectUrlTextField.text ?? "", urlName: urlNameTextField.text ?? "")
     }
 }

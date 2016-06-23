@@ -36,15 +36,18 @@ class Project: Equatable, FirebaseType {
     }
     
     var jsonValue: [String: AnyObject] {
-        return [kName: name, kCreator: creator, kURLString: urlString, kURLName: urlName, kComments: commentIds.map {[$0: true]}]
+        var commentDict: [String: AnyObject] = [:]
+        for commentId in commentIds {
+            commentDict.updateValue(true, forKey: commentId)
+        }
+        return [kName: name, kCreator: creator, kURLString: urlString, kURLName: urlName, kComments: commentDict]
     }
     
     required init?(dictionary: [String: AnyObject], identifier: String) {
         guard let name = dictionary[kName] as? String,
             creator = dictionary[kCreator] as? String,
             urlString = dictionary[kURLString] as? String,
-            urlName = dictionary[kURLName] as? String,
-            commentIds = dictionary[kComments] as? [String: AnyObject] else {
+            urlName = dictionary[kURLName] as? String else {
                 return nil
         }
         self.name = name
@@ -52,7 +55,11 @@ class Project: Equatable, FirebaseType {
         self.identifier = identifier
         self.urlString = urlString
         self.urlName = urlName
-        self.commentIds = Array(commentIds.keys)
+        if let commentIds = dictionary[kComments] as? [String: AnyObject] {
+            self.commentIds = Array(commentIds.keys)
+        } else {
+            self.commentIds = []
+        }
     }
 }
 

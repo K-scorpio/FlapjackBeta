@@ -9,15 +9,15 @@
 import Foundation
 import UIKit
 
-class Comment: Equatable {
+class Comment: Equatable, FirebaseType {
     
     private let kText = "text"
     private let kSender = "sender"
-    private let kProject = "project"
     
     var text: String
     var sender: String
-    var project: Project
+ 
+    var identifier: String?
     
     var endpoint: String {
         return "comments"
@@ -26,25 +26,23 @@ class Comment: Equatable {
     init(text: String, sender: String, project: Project) {
         self.text = text
         self.sender = sender
-        self.project = project
-    }
-
-    var jsonValue: [String: AnyObject] {
-        return [kText: text, kSender: sender, kProject: project]
     }
     
-    required init?(dictionary: [String: AnyObject], sender: String, project: Project) {
+    var jsonValue: [String: AnyObject] {
+        return [kText: text, kSender: sender]
+    }
+    
+    required init?(dictionary: [String: AnyObject], identifier: String) {
         guard let text = dictionary[kText] as? String,
-            sender = dictionary[kSender] as? String,
-            project = dictionary[kProject] as? Project else {
+            sender = dictionary[kSender] as? String else {
                 return nil
         }
         self.text = text
         self.sender = sender
-        self.project = project
+        self.identifier = identifier
     }
 }
 
 func ==(lhs: Comment, rhs: Comment) -> Bool {
-    return lhs.text == rhs.text && lhs.sender == rhs.sender && lhs.project == rhs.project
+    return lhs.text == rhs.text && lhs.sender == rhs.sender
 }
