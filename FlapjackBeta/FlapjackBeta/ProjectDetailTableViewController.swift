@@ -44,13 +44,12 @@ class ProjectDetailTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as? ProjectTableViewCell else {
-            return ProjectTableViewCell()
-        }
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath)
         // Configure the cell...
         // TODO: Configure cell with comment
-        cell.textLabel?.text = 
+        cell.textLabel?.text = UserController.currentUser?.displayName
+        cell.detailTextLabel?.text = "First Comment Test"
+        
         
         return cell
     }

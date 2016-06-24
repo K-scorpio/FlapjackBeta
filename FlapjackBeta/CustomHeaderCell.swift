@@ -14,7 +14,11 @@ class CustomHeaderCell: UITableViewCell, UINavigationControllerDelegate {
     @IBOutlet weak var fileName: UILabel!
     
     @IBAction func openGoogleButtonTapped(sender: AnyObject) {
-        // 
+        guard let url = NSURL(string: "http://www.google.com") else {
+            return
+        }
+        let safariViewController = SFSafariViewController(URL: url)
+//        presentViewController(safariViewController, animated: true, completion: nil)
     }
 
     override func awakeFromNib() {

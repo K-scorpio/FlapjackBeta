@@ -51,8 +51,8 @@ class ProjectViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("projectCell", forIndexPath: indexPath)        
         let project = projects[indexPath.row]
-        cell.textLabel?.text = project.creator
-        cell.detailTextLabel?.text = project.name
+        cell.textLabel?.text = project.name
+        cell.detailTextLabel?.text = project.creator
         return cell
     }
     
