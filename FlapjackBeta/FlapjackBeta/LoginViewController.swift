@@ -26,6 +26,14 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBOutlet weak var forgotButton: UIButton!
     
+    @IBOutlet weak var flapjackName: UIImageView!
+    
+    @IBOutlet weak var displayNameBackground: UIView!
+    
+    @IBOutlet weak var emailBackground: UIView!
+    
+    @IBOutlet weak var passwordBackground: UIView!
+    
     enum Account {
         case existing
         case new
@@ -81,7 +89,39 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(patternImage: UIImage(named:"Login Background")!)
         
+        userDisplayName.backgroundColor = UIColor.clearColor()
+        userDisplayName.attributedPlaceholder = NSAttributedString(string:"display name",
+                                                                      attributes:[NSForegroundColorAttributeName: UIColor.darkGrayColor()])
+        userDisplayName.borderStyle = UITextBorderStyle.None
+        userDisplayName.font = UIFont.systemFontOfSize(20)
+        userDisplayName.autocorrectionType = UITextAutocorrectionType.No
+        userDisplayName.keyboardType = UIKeyboardType.Default
+        userDisplayName.returnKeyType = UIReturnKeyType.Done
+        
+        userPasswordTextField.backgroundColor = UIColor.clearColor()
+        userPasswordTextField.attributedPlaceholder = NSAttributedString(string:"password",
+                                                               attributes:[NSForegroundColorAttributeName: UIColor.darkGrayColor()])
+        userPasswordTextField.borderStyle = UITextBorderStyle.None
+        userPasswordTextField.font = UIFont.systemFontOfSize(20)
+        userPasswordTextField.autocorrectionType = UITextAutocorrectionType.No
+        userPasswordTextField.keyboardType = UIKeyboardType.Default
+        userPasswordTextField.returnKeyType = UIReturnKeyType.Done
+        
+        userEmailTextField.backgroundColor = UIColor.clearColor()
+        userEmailTextField.attributedPlaceholder = NSAttributedString(string:"email",
+                                                                         attributes:[NSForegroundColorAttributeName: UIColor.darkGrayColor()])
+        userEmailTextField.borderStyle = UITextBorderStyle.None
+        userEmailTextField.font = UIFont.systemFontOfSize(20)
+        userEmailTextField.autocorrectionType = UITextAutocorrectionType.No
+        userEmailTextField.keyboardType = UIKeyboardType.Default
+        userEmailTextField.returnKeyType = UIReturnKeyType.Done
+        
+        displayNameBackground.layer.cornerRadius = 12.0
+        emailBackground.layer.cornerRadius = 12.0
+        passwordBackground.layer.cornerRadius = 12.0
+
         // Do any additional setup after loading the view.
     }
     
@@ -95,6 +135,8 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             account = .new
             userDisplayName.hidden = false
             myImageView.hidden = false
+            flapjackName.hidden = true
+            myImageView.image = UIImage(named: "profile")
             createNewAccount.setTitle("Have existing account?", forState: .Normal)
             loginButton.setTitle("Create Account", forState: .Normal)
             pickImageButton.hidden = false
@@ -103,9 +145,10 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             account = .existing
             userDisplayName.hidden = true
             myImageView.hidden = true
-            myImageView.image = UIImage(named: "profile")
+//            flapjackName.hidden = false
+            flapjackName.image = UIImage(named: "Flapjack Name")
             createNewAccount.setTitle("Create New Account", forState: .Normal)
-            loginButton.setTitle("Login", forState: .Normal)
+            loginButton.setTitle("Sign in", forState: .Normal)
             pickImageButton.hidden = true
             forgotButton.hidden = false
             

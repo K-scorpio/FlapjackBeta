@@ -22,6 +22,16 @@ class ProjectViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var myTableView: UITableView!
     
+    @IBAction func logoutButtonTapped(sender: AnyObject) {
+        let firebaseAuth = FIRAuth.auth()
+        do {
+            try firebaseAuth?.signOut()
+            dismissViewControllerAnimated(true, completion: nil)
+        } catch let signoutError as NSError {
+            print("Error signing out: \(signoutError)")
+        }
+        performSegueWithIdentifier("toLoginView", sender: self)
+    }
     var projects = [Project]()
     
     override func viewDidLoad() {

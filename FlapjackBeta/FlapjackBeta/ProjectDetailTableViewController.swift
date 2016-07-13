@@ -58,7 +58,7 @@ class ProjectDetailTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableCellWithIdentifier("headerView") as? CustomHeaderCell ?? CustomHeaderCell()
         
-        headerView.fileName.text = "Awesome file"
+        headerView.fileName.text = self.project?.urlName
         
         return headerView.contentView
     }
