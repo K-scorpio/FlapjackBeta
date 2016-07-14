@@ -248,10 +248,19 @@
                                     <constraint firstAttribute="height" constant="190" id="KSr-OC-psP"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvR-Zt-vI4">
+                                <rect key="frame" x="359" y="169" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="importFileButtonTapped:" destination="9Ml-bn-VtE" eventType="touchUpInside" id="4Cj-Lv-Lpt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BoO-7n-ogI" firstAttribute="top" secondItem="bTr-MY-t01" secondAttribute="bottom" constant="53" id="2CY-uW-4gu"/>
+                            <constraint firstItem="hvR-Zt-vI4" firstAttribute="top" secondItem="ird-AN-FfS" secondAttribute="top" id="6e8-tL-JWg"/>
+                            <constraint firstItem="hvR-Zt-vI4" firstAttribute="trailing" secondItem="ird-AN-FfS" secondAttribute="trailing" id="81X-V8-kWK"/>
                             <constraint firstItem="PGo-ps-HhV" firstAttribute="centerX" secondItem="DZZ-YC-VSv" secondAttribute="centerX" id="8Jq-Ds-js4"/>
                             <constraint firstItem="ird-AN-FfS" firstAttribute="leading" secondItem="PGo-ps-HhV" secondAttribute="leading" id="M8p-9O-lJR"/>
                             <constraint firstItem="ird-AN-FfS" firstAttribute="top" secondItem="BoO-7n-ogI" secondAttribute="bottom" constant="22" id="NX3-0S-OWL"/>

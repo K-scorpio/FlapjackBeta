@@ -54,6 +54,7 @@
 		E26802111D185F0F009D1166 /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		E26802131D186CAD009D1166 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E26802151D189D33009D1166 /* ProjectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectController.swift; sourceTree = "<group>"; };
+		E2F84C301D36BD0F007CD7C1 /* FlapjackBeta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FlapjackBeta.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +107,7 @@
 		E2086CA61D12F9DF00434BF2 /* FlapjackBeta */ = {
 			isa = PBXGroup;
 			children = (
+				E2F84C301D36BD0F007CD7C1 /* FlapjackBeta.entitlements */,
 				E2086CA71D12F9DF00434BF2 /* AppDelegate.swift */,
 				E2086CAB1D12F9DF00434BF2 /* Main.storyboard */,
 				E2086CAE1D12F9DF00434BF2 /* Assets.xcassets */,
@@ -190,6 +192,11 @@
 					E2086CA31D12F9DF00434BF2 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = QEU47X3V2Y;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -401,6 +408,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FlapjackBeta/FlapjackBeta.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = FlapjackBeta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -416,6 +424,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FlapjackBeta/FlapjackBeta.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = FlapjackBeta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
