@@ -42,7 +42,7 @@ class CommentController {
     
     // TODO: Fix this so it is fetching the comments for projectID AND DON'T COPY AND PASTE CODE!!!!!!!!!!!
     
-    static func observeCommentsForProject(project: Project, completion: (comments: [Comment]) -> Void) {
+    static func observeCommentsForProject(project: Project, completion: (comments: [Comment]?) -> Void) {
         // Fetch the proje0cts commentIDs
         if let projectId = project.identifier {
             FirebaseController.ref.child("projects").child(projectId).child("comments").observeEventType(.Value, withBlock: { (jsonSnapshot) in
@@ -62,8 +62,9 @@ class CommentController {
                         dispatch_group_leave(group)
                     })
                 }
-                dispatch_group_notify(group, dispatch_get_main_queue(), { 
-                    completion(comments: comments)
+                dispatch_group_notify(group, dispatch_get_main_queue(), {
+                    let sortedComments = comments.sort {$0.identifier < $1.identifier}
+                    completion(comments: sortedComments)
                 })
             })
         }

@@ -75,13 +75,13 @@ class ProjectViewController: UIViewController, UITableViewDataSource, UITableVie
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let detailVC = segue.destinationViewController as? ProjectDetailTableViewController
         if segue.identifier == "toProjectDetail" {
-            guard let indexPath = myTableView.indexPathForSelectedRow else {
+            guard let indexPath = myTableView.indexPathForSelectedRow, let detailVC = segue.destinationViewController as? ProjectDetailViewController
+                else {
                 return
             }
             let project = projects[indexPath.row]
-            detailVC?.project = project
+            detailVC.project = project
         }
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
