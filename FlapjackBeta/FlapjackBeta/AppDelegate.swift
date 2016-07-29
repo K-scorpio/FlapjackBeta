@@ -13,11 +13,27 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
+//    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+//        
+//        if DBSession.sharedSession().handleOpenURL(url) {
+//            if DBSession.sharedSession().isLinked() {
+//                NSNotificationCenter.defaultCenter().postNotificationName("didLinkToDropboxAccountNotification", object: nil)
+//                return true
+//            }
+//        }
+//        
+//        return false
+//    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        FIRApp.configure()
+        
+//        let appKey = ""      // Set your own app key value here.
+//        let appSecret = ""   // Set your own app secret value here.
+//        
+//        let dropboxSession = DBSession(appKey: appKey, appSecret: appSecret, root: kDBRootAppFolder)
+//        DBSession.setSharedSession(dropboxSession)
         
         return true
     }

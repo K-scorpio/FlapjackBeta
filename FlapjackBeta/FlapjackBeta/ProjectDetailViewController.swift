@@ -8,13 +8,25 @@
 
 import UIKit
 import QuickLook
-import SwiftyDropbox
+//import SwiftyDropbox
 
-class ProjectDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ProjectDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, QLPreviewControllerDataSource, QLPreviewControllerDelegate {
     
-    @IBOutlet weak var detailTableView: UITableView!
+//    var dbRestClient: DBRestClient!
+    
+//    var dropboxMetadata: DBMetadata!
+    
+    let quickLookController = QLPreviewController()
+    
+//    let fileNames = ["AppCoda-PDF.pdf", "AppCoda-Pages.pages", "AppCoda-Word.docx", "AppCoda-Keynote.key", "AppCoda-Text.txt", "AppCoda-Image.jpeg"]
     
     var project: Project?
+    var comments: [Comment]?
+    
+//    let fileNames = project.urlString
+    var fileURLs = [NSURL]()
+    
+    @IBOutlet weak var detailTableView: UITableView!
     
     @IBOutlet weak var messangerTextField: UITextField!
     
@@ -23,7 +35,35 @@ class ProjectDetailViewController: UIViewController, UITableViewDataSource, UITa
         messageSend()
     }
     
-    var comments: [Comment]?
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureTableView()
+//        navigationItem.title = ProjectViewController.projects[indexPath.row].name
+//        prepareFileURLs()
+        
+        quickLookController.dataSource = self
+        quickLookController.delegate = self
+        
+        detailTableView.sectionHeaderHeight = 49
+        
+        if let project = project {
+            CommentController.observeCommentsForProject(project, completion: { (comments) in
+                self.comments = comments
+                self.detailTableView.reloadData()
+            })
+        }
+        
+        // TESTING
+        
+        detailTableView.rowHeight = UITableViewAutomaticDimension
+        detailTableView.estimatedRowHeight = 40
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: self.view.window)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: self.view.window)
+        
+    }
     
     func messageSend() {
         
@@ -50,29 +90,83 @@ class ProjectDetailViewController: UIViewController, UITableViewDataSource, UITa
         //scrollToBottom()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func configureTableView() {
+        detailTableView.delegate = self
+        detailTableView.dataSource = self
+        detailTableView.registerNib(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: "headerCell")
+        detailTableView.reloadData()
+    }
+    
+//    func prepareFileURLs() {
+//        for file in fileNames {
+//            let fileParts = file.componentsSeparatedByString(".")
+//            if let fileURL = NSBundle.mainBundle().URLForResource(fileParts[0], withExtension: fileParts[1]) {
+//                if NSFileManager.defaultManager().fileExistsAtPath(fileURL.path!) {
+//                    fileURLs.append(fileURL)
+//                }
+//            }
+//        }
+//    }
+    
+    func getFileTypeFromFileExtension(fileExtension: String) -> String {
+        var fileType = ""
         
-        
-        detailTableView.sectionHeaderHeight = 49
-        
-        if let project = project {
-            CommentController.observeCommentsForProject(project, completion: { (comments) in
-                self.comments = comments
-                self.detailTableView.reloadData()
-            })
+        switch fileExtension {
+        case "docx":
+            fileType = "Microsoft Word document"
+            
+        case "pages":
+            fileType = "Pages document"
+            
+        case "jpeg":
+            fileType = "Image document"
+            
+        case "key":
+            fileType = "Keynote document"
+            
+        case "pdf":
+            fileType = "PDF document"
+            
+            
+        default:
+            fileType = "Text document"
+            
         }
         
-        // TESTING
-        
-        detailTableView.rowHeight = UITableViewAutomaticDimension
-        detailTableView.estimatedRowHeight = 40
-        
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: self.view.window)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: self.view.window)
-        
+        return fileType
     }
+    
+    func extractAndBreakFilenameInComponents(fileURL: NSURL) -> (fileName: String, fileExtension: String) {
+        // Break the NSURL path into its components and create a new array with those components.
+        let fileURLParts = fileURL.path!.componentsSeparatedByString("/")
+        
+        // Get the file name from the last position of the array above.
+        let fileName = fileURLParts.last
+        
+        // Break the file name into its components based on the period symbol (".").
+        let filenameParts = fileName?.componentsSeparatedByString(".")
+        
+        // Return a tuple.
+        return (filenameParts![0], filenameParts![1])
+    }
+    
+    func numberOfPreviewItemsInPreviewController(controller: QLPreviewController) -> Int {
+        return fileURLs.count
+    }
+    
+    func previewController(controller: QLPreviewController, previewItemAtIndex index: Int) -> QLPreviewItem {
+        return fileURLs[index]
+    }
+    
+    func previewControllerWillDismiss(controller: QLPreviewController) {
+        print("The Preview Controller will be dismissed.")
+    }
+    
+    func previewControllerDidDismiss(controller: QLPreviewController) {
+        detailTableView.deselectRowAtIndexPath(detailTableView.indexPathForSelectedRow!, animated: true)
+        print("The Preview Controller has been dismissed.")
+    }
+    
     
     // TODO: Create func/method that will observe messages that belong to the group. Similar to how we observe projects in the ProjectViewController
     
@@ -105,14 +199,22 @@ class ProjectDetailViewController: UIViewController, UITableViewDataSource, UITa
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if QLPreviewController.canPreviewItem(fileURLs[indexPath.row]) {
+            quickLookController.currentPreviewItemIndex = indexPath.row
+            //            navigationController?.pushViewController(quickLookController, animated: true)
+            presentViewController(quickLookController, animated: true, completion: nil)
+        }
+    }
     
-//    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = tableView.dequeueReusableCellWithIdentifier("headerView") as? CustomHeaderCell ?? CustomHeaderCell()
-//        
-//        headerView.fileName.text = self.project?.urlName
-//        
-//        return headerView.contentView
-//    }
+    
+    //    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    //        let headerView = tableView.dequeueReusableCellWithIdentifier("headerView") as? CustomHeaderCell ?? CustomHeaderCell()
+    //
+    //        headerView.fileName.text = self.project?.urlName
+    //
+    //        return headerView.contentView
+    //    }
     
     // MARK: - Keyboard translation & scroll
     

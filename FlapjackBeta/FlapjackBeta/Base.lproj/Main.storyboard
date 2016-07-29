@@ -81,7 +81,7 @@
                                     <outlet property="delegate" destination="5LC-l1-mdA" id="vHT-oG-geM"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCT-uo-oim">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCT-uo-oim" userLabel="HeaderCell">
                                 <rect key="frame" x="0.0" y="72" width="600" height="60"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flapjack" translatesAutoresizingMaskIntoConstraints="NO" id="0E7-dM-wJe">
@@ -179,12 +179,14 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="lh5-Bb-Vsa"/>
                                 </items>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="feF-6l-Jd6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="67" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="feF-6l-Jd6">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.20174278846153848" green="0.20174278846153848" blue="0.20174278846153848" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.77828525640000001" green="0.4458352706" blue="0.093898407119999999" alpha="0.32758620690000001" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="projectCell" textLabel="T4H-fj-OTV" detailTextLabel="Xi7-BY-Mvb" style="IBUITableViewCellStyleSubtitle" id="pLs-k6-HJU">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="67"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="600" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pLs-k6-HJU" id="jB0-BI-8p8">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="66.5"/>
